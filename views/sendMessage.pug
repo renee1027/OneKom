@@ -7,15 +7,15 @@ block append head
 block content
     .limiter.m-t-100
         .wrap-login100.p-l-55.p-r-55.p-t-65.p-b-54
-            form.login--form.validate0-form
+            .login--form.validate0-form
                 span.login100-form-title.p-b-49= 'Send Messages'
                 div.wrap-input100.validate-input.m-b-23
                     span.label-input100= 'Name'
-                    input.input100#userName(type='text' name='name' placeholder='Enter your name here')
+                    input.input100#userName(type='text' placeholder='Enter your name here')
 
                 div.wrap-input100.validate-input
                     span.label-input100= 'Message'
-                    input.input100#message(type='text' name='message' placeholder='Tell us what you think')
+                    input.input100#message(type='text' placeholder='Tell us what you think')
                 
                 div.container-login100-form-btn.p-t-54
                     .wrap-login100-form-btn
