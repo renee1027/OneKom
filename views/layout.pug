@@ -1,7 +1,35 @@
 doctype html
 html
-  head
+  block head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/bootstrap-grid.css')
+    link(rel='stylesheet', href='/css/bootstrap-reboot.css')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
+    link(rel='icon' type='image/png' href='/images/icons/fcbayern.png')
+    link(rel='stylesheet', href='/fonts/iconic/css/material-design-iconic-font.min.css')
+
+  body.background
     block content
+    block footer
+      footer
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="/lib/tether.js")
+        script(src="/plugins/bootstrap.js")
+        script(src="/lib/axios/dist/axios.standalone.js")
+        script(src="/lib/CryptoJS/rollups/hmac-sha256.js")
+        script(src="/lib/CryptoJS/rollups/sha256.js")
+        script(src="/lib/CryptoJS/components/hmac.js")
+        script(src="/lib/CryptoJS/components/enc-base64.js")
+        script(src="/lib/url-template/url-template.js")
+        script(src="/lib/apiGatewayCore/sigV4Client.js")
+        script(src="/lib/apiGatewayCore/apiGatewayClient.js")
+        script(src="/lib/apiGatewayCore/simpleHttpClient.js")
+        script(src="/lib/apiGatewayCore/utils.js")
+        script(src="/lib/apigClient.js")
+        script(src="/plugins/modernizr-2.6.2.min.js")
+        script(src="/plugins/polyfills.js")
+        //script(src="/plugins/demo1.js")
+        
+

@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var liveStream = require('./routes/liveStream');
 
 var app = express();
 
@@ -22,8 +22,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// views
 app.use('/', index);
-app.use('/users', users);
+app.use('/liveStream', liveStream);
+//app.use('/profile', profile);
+
+// public
+app.use('/public',express.static(path.join(__dirname, '/public')));
+app.use('/images',express.static(path.join(__dirname, '/public/images')));
+app.use('/vendor',express.static(path.join(__dirname, '/public/vendor')));
+app.use('/fonts',express.static(path.join(__dirname, '/public/fonts')));
+app.use('/font-awesome',express.static(path.join(__dirname, '/public/fonts/font-awesome-4.7.0')));
+app.use('/css',express.static(path.join(__dirname, '/public/stylesheets')));
+app.use('/custom',express.static(path.join(__dirname, '/public/javascripts/custom')));
+app.use('/lib',express.static(path.join(__dirname, '/public/javascripts/lib')));
+app.use('/plugins',express.static(path.join(__dirname, '/public/javascripts/plugins')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

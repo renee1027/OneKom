@@ -1,8 +1,221 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lato', Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+input:focus, button:focus {
+  outline:none !important;
+}
+
+body.background {
+  background: url('../images/allianz-arena-blurred.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.font-white {
+  color: white;
+}
+
+.bottom-text-container {
+  width: 250px;
+  bottom: 100px;
+  margin-left: 100px;
+  position: absolute;
+}
+
+.top-text-container {
+  width: 250px;
+  margin-top: 50px;
+  margin-left: 100px;
+  position: absolute;
+}
+
+.video-wrapper {
+  opacity: 0.7;
+}
+
+.video-container {
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  background-color: white;
+  position: absolute;
+}
+
+#videoElement {
+  margin-top: 190px;
+}
+
+#infoSection {
+  background-color:rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+#infoSection span {
+  display: inline-block;
+}
+
+#imageSpan {
+  height: 100%;
+  width: 30%;
+}
+
+#infoSpan {
+  width: 65%;
+  text-align: center;
+}
+
+#map {
+  height: 100%;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+#warnings-panel {
+  width: 100%;
+  height:10%;
+  text-align: center;
+}
+
+#container {
+  margin: 0px auto;
+  width: 100%;
+  height: 70vh;
+  vertical-align: middle;
+}
+
+#videoElement {
+  background-color: #666;
+}
+
+.circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.number {
+  font-size: 4em;
+}
+
+.withUnit {
+  vertical-align: middle;
+}
+
+.small-circle {
+  margin-top: 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+}
+
+.background-red {
+  background-color: #C65050;
+}
+
+.time-display {
+  font-size: 3em;
+}
+
+.transaction-info {
+  font-size: 1.2em;
+}
+
+.icon-map2:before {
+  content: "\e94c";
+}
+
+.icon-list2:before {
+  content: "\e9bb";
+}
+
+.font-red {
+  color: #C65050;
+}
+
+.background-white {
+  background-color: #fff;
+}
+
+.padding-top-10px {
+  padding-top: 10px;
+}
+
+.padding-top-8px {
+  padding-top: 8px;
+}
+.padding-top-neg10px {
+  top: -10px;
+}
+
+.padding-top-21px {
+  padding-top: 21px;
+}
+
+.padding-top-30px {
+  padding-top: 30px;
+}
+
+.margin-top-50px {
+  margin-top: 50px;
+}
+
+.margin-top-60px {
+  margin-top: 60px;
+}
+
+.margin-top-100px {
+  margin-top: 100px;
+}
+
+.mapButton {
+  position: absolute;
+  width: 50px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+#back {
+  top: 50px;
+  left: 0px;
+  bottom: 50px;
+}
+
+#back:hover {
+  background-image: url('../images/back.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-attachment: fixed;
+}
+
+#forward {
+  top: 50px;
+  right: 0px;
+  bottom: 50px;
+}
+
+#forward:hover {
+  background-image: url('../images/forward.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-attachment: fixed;
 }

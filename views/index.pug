@@ -1,5 +1,55 @@
 extends layout
 
+block append head
+    link(rel="stylesheet" href="/css/login.css")
+    link(rel="stylesheet" href="/css/utils.css")
+    link(rel="stylesheet" href="/vendor/animate/animate.css")
+    link(rel="stylesheet" href="/vendor/css-hamburgers/hamburgers.min.css")
+    link(rel="stylesheet" href="/vendor/animsition/css/animsition.min.css")
+    link(rel="stylesheet" href="/vendor/select2/select2.min.css")
+    link(rel="stylesheet" href="/vendor/daterangepicker/daterangepicker.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+  .limiter
+    .wrap-login100.p-l-55.p-r-55.p-t-65.p-b-54
+      form.login--form.validate0-form
+        span.login100-form-title.p-b-49= 'Login'
+        div.wrap-input100.validate-input.m-b-23
+          span.label-input100= 'Username'
+          input.input100(type='text' name='username' placeholder='Username')
+
+        div.wrap-input100.validate-input
+          span.label-input100= 'Password'
+          input.input100(type='password' name='password' placeholder='Password')
+
+        div.text-right.p-t-8.p-b-31
+          a(href='#')
+            p= 'Forgot password?'
+
+        div.container-login100-form-btn
+          .wrap-login100-form-btn
+            .login100-form-bgbtn
+            button.login100-form-btn= 'Login'
+
+        .txt1.text-center.p-t-54.p-b-20
+          span= 'Or Sign Up Using'
+
+        .flex-c-m
+          a.login100-social-item.bg1(href='#')
+            i.fa.fa-facebook
+          a.login100-social-item.bg2(href='#')
+            i.fa.fa-twitter
+          a.login100-social-item.bg3(href='#')
+            i.fa.fa-google
+
+        .flex-col-c.p-t-50
+          p= 'New user? Register '
+            a(href='#')= 'here'
+
+block append footer
+  script(src="/plugins/login.js")
+  script(src="/vendor/countdowntime/countdowntime.js")
+  script(src="/vendor/animsition/js/animsition.min.js")
+  script(src="/plugins/popper.min.js")
+  script(src="/vendor/select2/select2.min.js")
+  script(src="/vendor/daterangepicker/daterangepicker.js")
