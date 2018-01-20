@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var liveStream = require('./routes/liveStream');
+var randomStreamRoom = require('./routes/randomStreamRoom');
+var sendMessage = require('./routes/sendMessage');
 
 var app = express();
 
@@ -26,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/liveStream', liveStream);
 //app.use('/profile', profile);
+app.use('/randomStreamRoom', randomStreamRoom);
+app.use('/sendMessage', sendMessage);
 
 // public
 app.use('/public',express.static(path.join(__dirname, '/public')));

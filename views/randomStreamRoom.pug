@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    input#message(type="text" placeholder="Message")
+    button#post= 'Post'
+
+block append footer
+  script(src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js")
+  script()
+  script.
+    var config = {
+        apiKey: "AIzaSyDjDld7xC_8rFCfy0qvljr8XT8qUjNtyPk",
+        authDomain: "onekom-1001.firebaseapp.com",
+        databaseURL: "https://onekom-1001.firebaseio.com",
+        projectId: "onekom-1001",
+        storageBucket: "onekom-1001.appspot.com",
+        messagingSenderId: "979475401171"
+    };
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+    
+    $('#post').click(function() {
+        firebase.database().ref('messages/' + 123).set({
+            message: 'Hello'
+        });
+    });

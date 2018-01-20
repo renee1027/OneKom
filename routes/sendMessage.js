@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('randomStreamRoom', { title: 'Random Stream Room' });
+  res.render('sendMessage', { title: 'Send Messages' });
 });
 
 module.exports = router;
