@@ -181,8 +181,12 @@ iframe {
 }
 
 .wrap-login100 {
-  width: 500px;
+  min-width: 500px;
+  width: 40%;
+  max-height: 80%;
+  margin: 0 auto;
   background: #fff;
+  opacity: 0.85;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -334,11 +338,11 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -o-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: #d22a35;
+  background: -webkit-linear-gradient(right, #D22871, #FF8A91, #F44662, #D22834);
+  background: -o-linear-gradient(right, #D22871, #FF8A91, #F44662, #D22834);
+  background: -moz-linear-gradient(right, #D22871, #FF8A91, #F44662, #D22834);
+  background: linear-gradient(right, #D22870, #FF8A91, #F44662, #D22834);
   top: 0;
   left: -100%;
 
