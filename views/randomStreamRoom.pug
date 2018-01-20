@@ -1,27 +1,16 @@
 extends layout
 
 block content
-    input#message(type="text" placeholder="Message")
-    button#post= 'Post'
+    .background2
+        .stream-wrapper
+            .row.full-width-height
+                .col-md-7.full-width-height
+                    iframe.video-container(src="https://www.youtube.com/embed/-d3vrWScBik" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+
+                .col-md-5#drag-drop-section
 
 block append footer
   script(src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js")
-  script()
+  script(src="/custom/connectToFirebase.js")
   script.
-    var config = {
-        apiKey: "AIzaSyDjDld7xC_8rFCfy0qvljr8XT8qUjNtyPk",
-        authDomain: "onekom-1001.firebaseapp.com",
-        databaseURL: "https://onekom-1001.firebaseio.com",
-        projectId: "onekom-1001",
-        storageBucket: "onekom-1001.appspot.com",
-        messagingSenderId: "979475401171"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-    
-    $('#post').click(function() {
-        firebase.database().ref('messages/' + 123).set({
-            message: 'Hello'
-        });
-    });
+    var database = connectToFirebase();

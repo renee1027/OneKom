@@ -5,22 +5,24 @@ block append head
     link(rel="stylesheet" href="/css/utils.css")
 
 block content
-    .limiter.m-t-100
-        .wrap-login100.p-l-55.p-r-55.p-t-65.p-b-54
-            .login--form.validate0-form
-                span.login100-form-title.p-b-49= 'Send Messages'
-                div.wrap-input100.validate-input.m-b-23
-                    span.label-input100= 'Name'
-                    input.input100#userName(type='text' placeholder='Enter your name here')
+    .background
+        .full-wrapper
+            .limiter.m-t-100
+                .wrap-login100.p-l-55.p-r-55.p-t-65.p-b-54
+                    .login--form.validate0-form
+                        span.login100-form-title.p-b-49= 'Send Messages'
+                        div.wrap-input100.validate-input.m-b-23
+                            span.label-input100= 'Name'
+                            input.input100#userName(type='text' placeholder='Enter your name here')
 
-                div.wrap-input100.validate-input
-                    span.label-input100= 'Message'
-                    input.input100#message(type='text' placeholder='Tell us what you think')
-                
-                div.container-login100-form-btn.p-t-54
-                    .wrap-login100-form-btn
-                        .login100-form-bgbtn
-                        button.login100-form-btn#post= 'Post Your Message!'
+                        div.wrap-input100.validate-input
+                            span.label-input100= 'Message'
+                            input.input100#message(type='text' placeholder='Tell us what you think')
+                        
+                        div.container-login100-form-btn.p-t-54
+                            .wrap-login100-form-btn
+                                .login100-form-bgbtn
+                                button.login100-form-btn#post= 'Post Your Message!'
 
 block append footer
   script(src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js")

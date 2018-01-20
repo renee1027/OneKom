@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px 'Lato', Arial, sans-serif;
 }
 
@@ -11,8 +10,18 @@ input:focus, button:focus {
   outline:none !important;
 }
 
-body.background {
+.full-wrapper {
+  padding: 50px;
+}
+
+.background {
   background: url('../images/allianz-arena-blurred.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.background2 {
+  background: url('../images/background.jpg') no-repeat;
   background-size: cover;
   height: 100vh;
 }
@@ -35,44 +44,22 @@ body.background {
   position: absolute;
 }
 
-.video-wrapper {
-  opacity: 0.7;
-}
-
-.video-container {
+.stream-wrapper {
   height: 100%;
-  top: 0px;
-  right: 0px;
-  background-color: white;
-  position: absolute;
 }
 
-#videoElement {
-  margin-top: 190px;
-}
-
-#infoSection {
-  background-color:rgba(255, 255, 255, 0.8);
+.full-width-height {
   width: 100%;
   height: 100%;
 }
 
-#infoSection span {
-  display: inline-block;
-}
-
-#imageSpan {
+.video-container {
+  width: 100%;
   height: 100%;
-  width: 30%;
 }
 
-#infoSpan {
-  width: 65%;
-  text-align: center;
-}
-
-#map {
-  height: 100%;
+#drag-drop-section {
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 #floating-panel {
