@@ -29,7 +29,8 @@ block append footer
     var database = connectToFirebase();
 
     $('#post').click(function() {
-        firebase.database().ref('messages/' + $('#userName').val()).set({
+        firebase.database().ref('messages/').push({
+            name: $('#userName').val(),
             message: $('#message').val()
         });
     });
