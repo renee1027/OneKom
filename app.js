@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var liveStream = require('./routes/liveStream');
 var randomStreamRoom = require('./routes/randomStreamRoom');
 var sendMessage = require('./routes/sendMessage');
+var dashboard = require('./routes/dashboard');
 
 var app = express();
 
@@ -27,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // views
 app.use('/', index);
 app.use('/liveStream', liveStream);
-//app.use('/profile', profile);
+app.use('/dashboard', dashboard);
 app.use('/randomStreamRoom', randomStreamRoom);
 app.use('/sendMessage', sendMessage);
 

@@ -1,0 +1,42 @@
+extends layout
+
+block append head
+	link(rel="stylesheet" href="/css/normalize.css")
+	link(rel="stylesheet" href="/css/demo.css")
+	link(rel="stylesheet" href="/css/component1.css")
+
+block content
+	.container
+		.section
+			#infoPanel.margin-top-100px.text-center
+				.row
+					.col-md-3.mileage
+						img(
+							width="150"
+							src="../public/images/thomas3.jpg"
+							class="img-circle"
+						)
+						#userProfile.margin-top-35px
+							h5='Hi, Thomas'
+					.col-md-3.mileage
+						.pricing-table
+							.pricing-table-content
+								ul.m-t-30
+									li='32580 Tester1'
+									li='32580 Tester1'
+									li='32580 Tester1'
+									li.pricing-table-header.featured.font-white='32580 Tester1'
+									li='32580 Tester1'
+									li='32580 Tester1'
+									li='32580 Tester1'
+					.col-md-5.margin-left-50px
+						#container(style='min-width: 200px height: 100px')
+		.section
+			include ./navigationMenu.pug
+
+block append footer
+	script(src='https://img.hcharts.cn/highcharts/highcharts.js')
+	script(src='https://img.hcharts.cn/highcharts/modules/exporting.js')
+	script(src='https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js')
+	script(src='/custom/chart.js')
+	
