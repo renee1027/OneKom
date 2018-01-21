@@ -30,6 +30,15 @@
             $('.inner-text-wrap').stop().animate({
                 scrollTop: $('.inner-text-wrap')[0].scrollHeight
               }, 800);
+
+            if (/\bgoal\b/i.test(newMsg.message)) {
+                $('#celebration-container').show();
+            }
+
+            $('#celebration-container').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+                $('#celebration-container').hide();
+            });
+        
             
           });
     }
