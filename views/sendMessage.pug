@@ -31,6 +31,7 @@ block append footer
 
     $('#post').click(function() {
         firebase.database().ref('messages/').push({
+            isUser: false,
             name: $('#userName').val(),
             message: $('#message').val()
         });

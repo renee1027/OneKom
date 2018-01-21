@@ -68,6 +68,7 @@ block append footer
         }
     }
     $( function() {
+        addMsgListener(database);
         addDraggables();
         $( ".draggable-option" ).draggable({
             revert: "invalid",
@@ -86,6 +87,15 @@ block append footer
 
         $('#floating-chat-icon').click(function() {
             $('#chat-box').toggle();
+        });
+
+        $('#send-msg').click(function() {
+            firebase.database().ref('messages/').push({
+                isUser: true,
+                name: 'John',
+                message: $('#chat-box-text').val()
+            });
+            $('#chat-box-text').val('');
         });
 
     });

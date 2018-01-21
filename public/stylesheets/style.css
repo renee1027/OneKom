@@ -155,12 +155,63 @@ input:focus, button:focus {
   position: relative;
   margin: 0 auto;
 }
+
 .text-wrap {
   position: absolute;
   z-index: 4;
   border-bottom: 2px solid #d9d9d9;
   width: 100%;
   bottom: 50px;
+  overflow: hidden;
+}
+
+.inner-text-wrap {
+  position: relative;
+  max-height: 598px;
+  padding-right: 17px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+.your-msg {
+  float: left;
+  clear: both;
+}
+
+.your-msg-box {
+  background-color: #d9d9d9;
+}
+
+.my-msg-box {
+  background-color: #00B7FF;
+}
+
+.my-msg {
+  float: right;
+  clear: both;
+}
+
+.sender-name {
+  font-size: 12px;
+  color: rgb(189, 171, 171);
+  padding-left: 5px;
+}
+
+.msg-box {
+  min-height: 50px;
+  min-width: 150px;
+  max-width: 220px;
+  vertical-align: middle;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+#msg-area li:last-child {
+  margin-bottom: 20px;
 }
 
 #chat-box-text {

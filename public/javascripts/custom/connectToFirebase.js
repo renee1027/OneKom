@@ -14,7 +14,28 @@
         return firebase.database();
     }
 
+    function addMsgListener(database) {
+        let newMsgBox;
+        firebase.database().ref('messages/').on('child_added', function(snapshot, prevChildKey) {
+            var newMsg = snapshot.val();
+            if (newMsg.isUser) {
+                newMsgBox = $("<li class='my-msg'><div class='sender-name'>Me</div>"
+                            + "<div class='my-msg-box msg-box'>" + newMsg.message + "</div></li>");
+            } else {
+                newMsgBox = $("<li class='your-msg'><div class='sender-name'>" + newMsg.name + "</div>"
+                            + "<div class='your-msg-box msg-box'>" + newMsg.message + "</div></li>");
+            }
+
+            newMsgBox.appendTo($('#msg-area'));
+            $('.inner-text-wrap').stop().animate({
+                scrollTop: $('.inner-text-wrap')[0].scrollHeight
+              }, 800);
+            
+          });
+    }
+
     window.connectToFirebase = connectToFirebase;
+    window.addMsgListener = addMsgListener;
 })();
     
     
