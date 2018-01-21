@@ -50,10 +50,23 @@ block content
                                 ul.m-l-30
                                     li
                                         input#bayern(type='radio' name="iCheck" checked)
-                                        label.p-l-10(for='bayern')= ' FC Bayern'
+                                        label.p-l-10(for='bayern')= 'FC Bayern'
                                     li
                                         input#psg(type='radio' name="iCheck")
                                         label.p-l-10(for='psg')= 'Paris Saint-Germain'
+                                br
+                                br        
+                                h3.p-b-20= 'Who will score the last goal?'
+                                ul.m-l-30
+                                    li
+                                        input#thomas(type='radio' name="iCheck2")
+                                        label.p-l-10(for='thomas')= 'Thomas Mueller'
+                                    li
+                                        input#james(type='radio' name="iCheck2")
+                                        label.p-l-10(for='james')= 'James Rodriguez'
+                                    li
+                                        input#boateng(type='radio' name="iCheck2")
+                                        label.p-l-10(for='lewandowski')= 'Robert Lewandowski'
         
         include ./chat.pug         
 
