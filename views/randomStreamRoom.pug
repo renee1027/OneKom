@@ -1,5 +1,9 @@
 extends layout
 
+block append head
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel="stylesheet" href="/css/login.css")
+
 block content
     .background2
         .stream-wrapper
@@ -7,10 +11,81 @@ block content
                 .col-md-7.full-width-height
                     iframe.video-container(src="https://www.youtube.com/embed/-d3vrWScBik" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
 
-                .col-md-5#drag-drop-section
+                .col-md-5#background-black-75.full-width-height
+                    .row.m-t-25
+                        .col-md-8
+                            #options-section.m-t-30.m-l-30.pull-right
+                                .row.optionsRow.m-t-17
+                                    .fit
+                        .clearfix
+                        .col-md-4
+                            #invitation-section.m-t-35.pull-right
+                                .right-btn.filled-btn.brick-red-background.font-white
+                                    i.fa.fa-plus
+                                    span= ' Invite Friends'
+                                .right-btn.filled-btn.brick-red-background.font-white.m-t-20
+                                    i.fa.fa-users
+                                    span= ' Get Matched'
+                    .section-width-80
+                        #viewing-section.droppable-section.m-t-60
+                            #score-board.text-center
+                                .row
+                                    .col-md-5#home-team
+                                        .team-name.font-white= 'FC Bayern Munich'
+                                        .team-score.font-white.number= '3'
+                                        img.team-logo(src='/images/icons/fcbayern.png')
+                                    .col-md-2.m-t-10
+                                        .vs.font-white.number= ':'
+                                    .col-md-5#away-team
+                                        .team-name.font-white= 'Paris Saint-Germain'
+                                        .team-score.font-white.number= '1'
+                                        img.team-logo(src='/images/icons/psg.png')
+        
+        include ./chat.pug
+                            
+                            
 
 block append footer
+  script(src="//code.jquery.com/ui/1.11.4/jquery-ui.js")
   script(src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js")
   script(src="/custom/connectToFirebase.js")
   script.
     var database = connectToFirebase();
+    var startPos;
+    var currElem;
+    var draggableOpts = !{JSON.stringify(options)};
+
+    function addDraggables() {
+        for (var i in draggableOpts) {
+            let option = draggableOpts[i];
+            if ($('.optionsRow .fit').last().width() > 300) {
+                let newRow = $("<div class='row optionsRow m-t-15'><div class='fit'></div></div>");
+                $('#options-section').append(newRow);
+            }
+            let newOption = $("<span class='draggable-option' value=" + option.name + ">" +
+                                "<i class='" + option.icon + "'></i><span> " + option.name + "</span>");
+            $('.optionsRow .fit').last().append(newOption);
+        }
+    }
+    $( function() {
+        addDraggables();
+        $( ".draggable-option" ).draggable({
+            revert: "invalid",
+            start: function(evt, ui){
+                currElem = evt.target;
+                startPos = ui.helper.position();
+            }
+        });
+        $( "#viewing-section" ).droppable({
+            drop: function( event, ui ) {
+                $(currElem).attr('style', '');
+                $(currElem).css({clientLeft: startPos.left, clientTop: startPos.top});
+                $(currElem).hide();
+            }
+        });
+
+        $('#floating-chat-icon').click(function() {
+            $('#chat-box').toggle();
+        });
+
+    });
