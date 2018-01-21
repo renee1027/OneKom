@@ -39,7 +39,7 @@ block content
                                     .col-md-5#away-team
                                         .team-name.font-white= 'Paris Saint-Germain'
                                         .team-score.font-white.number= '1'
-                                        img.team-logo(src='/images/icons/psg.png')
+                                        img.team-logo(src='/images/icons/psgparis.png')
         
         include ./chat.pug
                             
@@ -87,6 +87,9 @@ block append footer
 
         $('#floating-chat-icon').click(function() {
             $('#chat-box').toggle();
+            $('.inner-text-wrap').stop().animate({
+                scrollTop: $('.inner-text-wrap')[0].scrollHeight
+              }, 800);
         });
 
         $('#send-msg').click(function() {

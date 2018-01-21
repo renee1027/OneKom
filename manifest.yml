@@ -1,0 +1,5 @@
+---
+applications:
+  - name: onekom
+    memory: 256M
+    command: bin/www
