@@ -3,6 +3,8 @@ extends layout
 block append head
     link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel="stylesheet" href="/css/login.css")
+    link(rel="stylesheet" href="/css/football-animation.css")
+    link(href="/plugins/icheck/flat/red.css" rel="stylesheet")
 
 block content
     .background2
@@ -28,6 +30,8 @@ block content
                                     span= ' Get Matched'
                     .section-width-80
                         #viewing-section.droppable-section.m-t-60
+                            #close-btn
+                                i.fa.fa-times
                             #score-board.text-center
                                 .row
                                     .col-md-5#home-team
@@ -40,13 +44,22 @@ block content
                                         .team-name.font-white= 'Paris Saint-Germain'
                                         .team-score.font-white.number= '1'
                                         img.team-logo(src='/images/icons/psgparis.png')
+                            
+                            #polls
+                                h3.p-b-20= 'Which team will win the match?'
+                                ul.m-l-30
+                                    li
+                                        input#bayern(type='radio' name="iCheck" checked)
+                                        label.p-l-10(for='bayern')= ' FC Bayern'
+                                    li
+                                        input#psg(type='radio' name="iCheck")
+                                        label.p-l-10(for='psg')= 'Paris Saint-Germain'
         
-        include ./chat.pug
-                            
-                            
+        include ./chat.pug         
 
 block append footer
   script(src="//code.jquery.com/ui/1.11.4/jquery-ui.js")
+  script(src="/plugins/icheck/icheck.js")
   script(src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js")
   script(src="/custom/connectToFirebase.js")
   script.
@@ -70,6 +83,11 @@ block append footer
     $( function() {
         addMsgListener(database);
         addDraggables();
+        $('#polls input').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+
         $( ".draggable-option" ).draggable({
             revert: "invalid",
             start: function(evt, ui){
@@ -82,6 +100,10 @@ block append footer
                 $(currElem).attr('style', '');
                 $(currElem).css({clientLeft: startPos.left, clientTop: startPos.top});
                 $(currElem).hide();
+
+                $('#score-board').hide();
+                $('#polls').show();
+                $('#close-btn').show();
             }
         });
 
@@ -100,5 +122,12 @@ block append footer
             });
             $('#chat-box-text').val('');
         });
+
+        $('#close-btn').click(function() {
+            $('#close-btn').hide();
+            $('#polls').hide();
+            $('#score-board').show();
+            $(currElem).show();
+        })
 
     });
